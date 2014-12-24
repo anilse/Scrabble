@@ -1,7 +1,7 @@
 import Controller.Controller;
 
 /**
- * GUI
+ * Main
  * @author asezgin
  *
  */
