@@ -41,7 +41,8 @@ public class Viewer extends JPanel {
 	JLabel labelUser_1_Score;
 	JLabel labelUser_2_Score;
 	JLabel labelMessage = new JLabel("MESSAGE: ");
-	
+	JLabel indexLabelList[] = new JLabel[30]; // shows grid index
+
 	int passCount = 0;
 	
 	public Viewer(Controller controller) 
@@ -86,6 +87,8 @@ public class Viewer extends JPanel {
 		user_2_Label.setBounds(520, 55, 400, 20);
 		user_2_Label.setVisible(true);
 		this.add(user_2_Label);
+		
+
 		
 		labelMessage.setBounds(40, 500, 600, 30);
 		labelMessage.setVisible(true);
@@ -139,6 +142,25 @@ public class Viewer extends JPanel {
 			fieldList[i][0].setText("");
 			fieldList[i][1].setText("");
 			fieldList[i][2].setText("");
+		}
+		
+		// vertical number
+		int indexer = 0;
+		for(indexer = 0; indexer < 15; indexer++)
+		{
+			indexLabelList[indexer] = new JLabel("column");
+			indexLabelList[indexer].setBounds(7, 37 + indexer*30, 25, 15);
+			indexLabelList[indexer].setVisible(true);
+			this.add(indexLabelList[indexer]);
+			indexLabelList[indexer].setText(indexer + "");
+		}
+		// horizontal number
+		for( ;indexer < 30; indexer ++)
+		{
+			indexLabelList[indexer] = new JLabel("row");
+			indexLabelList[indexer].setText( (indexer - 15) + "");
+			indexLabelList[indexer].setBounds(37 + (indexer-15)*30, 7, 25, 15);
+			this.add(indexLabelList[indexer]);
 		}
 	}
 	
@@ -207,7 +229,7 @@ public class Viewer extends JPanel {
 	 */
 	public void paintComponent(Graphics g) 
 	{
-		int x = 34, y = 30;
+		int x = 34, y = 30, r = 0, c =0;
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
 		// Reset your starting y value here
@@ -215,9 +237,8 @@ public class Viewer extends JPanel {
 		// draw rows
 		for (int i = 1; i <= 16; i++) {
 			g.drawLine(30, 30 * i, 480, 30 * i);
-
 		}
-
+		
 		// draw columns
 		for (int i = 1; i <= 16; i++) {
 			g.drawLine(30 * i, 30, 30 * i, 480);
