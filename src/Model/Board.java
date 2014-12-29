@@ -9,8 +9,8 @@ package Model;
 
 public class Board {
 	private static Board instance = null;
-	private String[][][] table = null;
-	private String[][][] tempTable = null;// save extra information for some process	
+	private String[][][] table = null; // on GUI
+	private String[][][] tempTable = null; // calculation process is done on tempTable.	
 	
 	private Board()
 	{		
