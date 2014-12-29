@@ -59,6 +59,7 @@ public class User implements IUser {
 		return letterList;
 	}
 	
+	// randomize the player's hand.
 	public void fullListToSeven()
 	{		
 		for(int i = 0; i < 7; i++)
@@ -68,6 +69,7 @@ public class User implements IUser {
 		}
 	}
 	
+	// get another random letter instead of played letter, attackPoints mean player's input as row, column, letter
 	public void playGivenLetter(List<AttackLetter> attackPoints)
 	{
 		// attacked letter will be in the letter list
@@ -86,6 +88,7 @@ public class User implements IUser {
 		}
 	}
 	
+        // check if the user input is matching with user attack letters.
 	public boolean checkUserHasCurrentLetter(List<AttackLetter> attackPoints)
 	{
 		int size = attackPoints.size();
