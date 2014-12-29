@@ -229,7 +229,7 @@ public class Viewer extends JPanel {
 	 */
 	public void paintComponent(Graphics g) 
 	{
-		int x = 34, y = 30, r = 0, c =0;
+		int x = 34, y = 30;
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
 		// Reset your starting y value here
